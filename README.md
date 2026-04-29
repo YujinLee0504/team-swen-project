@@ -30,10 +30,6 @@ An online U-Fund system built in Java **21** and Angular **20**
 6. Open in your browser `http://localhost:4200/`
 
 ## Known bugs and disclaimers
-(It may be the case that your implementation is not perfect.)
-
-Document any known bug or nuisance.
-If any shortcomings, make clear what these are and where they are located.
 
 Note: Hard coded admin password: abc123
 
