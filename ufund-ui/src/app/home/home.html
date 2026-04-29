@@ -1,0 +1,10 @@
+<div class="container">
+@if (loggedIn()) {
+    <h1>Logged in! Welcome {{ userName() }}</h1>
+    <app-cupboard-search></app-cupboard-search>
+} @else {
+    <h1>Our Mission</h1><br>
+    <p>At YourLocalCupboard, we believe that no one in our communities should go hungry—and that helping can be simple, direct, and meaningful. Our <span class="ai-text">AI-powered</span> platform connects food banks with the people who want to support them by clearly sharing real, up-to-date needs. Instead of guessing what might help, donors can see exactly what items are needed most and contribute with confidence, knowing their efforts make an immediate impact.</p>
+    <br>
+    <p>We created YourLocalCupboard to bridge the gap between generosity and necessity. By giving food banks a voice and donors a clear path to help, we make community support more efficient, transparent, and impactful. Whether you’re an individual looking to give back or an organization hoping to make a difference, YourLocalCupboard makes it easier to turn compassion into action.</p>
+}

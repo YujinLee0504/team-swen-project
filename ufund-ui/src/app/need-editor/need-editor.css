@@ -1,0 +1,227 @@
+.editor-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-with-symbol {
+    position: relative;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.input-with-symbol input {
+    padding-left: 25px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.btn-ai {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3, #fbc2eb);
+    background-size: 200% 200%;
+    animation: aurora 3s ease infinite;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(167, 119, 227, 0.4);
+    transition: transform 0.2s;
+    background-clip: padding-box;
+    color: transparent;
+    -webkit-background-clip: text, padding-box;
+    background-image: 
+        linear-gradient(135deg, #ffffff, #e0c3fc, #ffffff), 
+        linear-gradient(135deg, #6e8efb, #a777e3, #fbc2eb);
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-ai:hover {
+    transform: scale(1.05);
+}
+
+.btn-ai:disabled {
+    background: #e0e0e0;
+    background-image: none;
+    animation: none;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+    -webkit-text-fill-color: #888;
+}
+
+.sparkle {
+    font-size: 0.9rem;
+    -webkit-text-fill-color: initial;
+}
+
+@keyframes aurora {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.icon-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #fcfcfc;
+    border-radius: 8px;
+    border: 1px dashed #ddd;
+}
+
+.emoji-preview {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-ai-mini {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-ai-mini:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.pulse {
+    animation: pulse-animation 1s infinite;
+}
+
+@keyframes pulse-animation {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.icon-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-remove-icon {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    color: #666;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-remove-icon:hover {
+    background: #fee;
+    color: #f44336;
+    border-color: #f44336;
+}
+
+.emoji-preview {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 2px dashed #eee;
+    border-radius: 12px;
+    margin-top: 10px;
+    color: #ccc; /* Color for the empty state symbol */
+}

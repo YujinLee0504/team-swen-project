@@ -1,0 +1,27 @@
+<div class="pledge-container">
+    <h2>Review Pledge Basket</h2>
+
+    <ul class="pledges">
+        <li *ngFor="let pledge of pledgeBasketListCache">
+            @if (needExistsLocally(pledge.needId)) {
+            <p>
+                <span class="badge">{{pledge.id}}</span>
+                <strong>{{pledge.quantityPledged}}</strong> of {{ getNeedName(pledge.needId) }} and
+                <span class="amount">${{pledge.moneyPledged | number : '1.2-2'}}</span>
+                <button class="btn-remove" (click)="removePledge(pledge.id)">X</button>
+            </p>
+        }
+        </li>
+    </ul>
+
+    @if (pledgeBasketListCache.length < 1) {
+        <p>No pledges in basket...</p>
+    }
+
+    <div class="checkout-actions">
+        <button class="btn-back" (click)="goBack()">Back</button>
+        @if (pledgeBasketListCache.length > 0) {
+            <button class="btn-checkout" (click)="confirmCheckout()">Confirm Checkout</button>
+        }
+    </div>
+</div>

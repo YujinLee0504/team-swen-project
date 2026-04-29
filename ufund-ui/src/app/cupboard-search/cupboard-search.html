@@ -1,0 +1,85 @@
+<div class="search-wrapper">
+    <div class="search-input-group">
+        <span class="search-icon">🔍</span>
+        <input #searchInput (input)="search(searchInput.value)" class="custom-search" placeholder="Search for needs...">
+    </div>
+
+    @if (selectedCreator) {
+    <div class="creator-tag">
+        <span>Needs From Food Bank: <strong>{{ selectedCreator }}</strong></span>
+        <button class="btn-clear-tag" (click)="clearCreatorFilter()">×</button>
+    </div>
+    }
+</div>
+
+<div class="scroll-container">
+    @if (needs.length === 0) {
+    <p class="no-results">No needs match your search or filters.</p>
+    }
+    @if (needs.length > 0) {
+<ul class="needs-list">
+    <li *ngFor="let need of needs">
+        @if (isLocalManagerUser(need.creatorId)) {
+        <div class="need-card">
+            <div class="need-info">
+                <div class="name-with-icon">
+                    @if (need.icon) {
+                        <span class="need-icon-display">{{ need.icon }}</span>
+                    }
+                    <span class="need-name">{{ need.name }} [{{ need.type }}]</span>
+                </div>
+                <span class="need-cost">${{ need.cost | number : '1.2-2' }} per item</span>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar"
+                    [style.width.%]="need.completionPercentage > 100 ? 100 : need.completionPercentage"
+                    [ngClass]="{'complete': need.completionPercentage >= 100, 'incomplete': need.completionPercentage < 100}">
+                </div>
+            </div>
+
+            <div class="percentage-label">
+                {{ (need.quantityFulfilled ?? 0) | number : '1.0-2' }} pledged ({{ need.quantity }} needed)
+            </div>
+
+            @if (need.desc && need.desc.trim().length > 0) {
+            <div class="need-description-container">
+                <p class="need-description" [class.expanded]="need.isExpanded">
+                    {{ need.desc }}
+                </p>
+                @if (need.desc && need.desc.length > 60) {
+                <button class="btn-text-link" (click)="need.isExpanded = !need.isExpanded">
+                    {{ need.isExpanded ? 'Show Less' : 'Read More...' }}
+                </button>
+                }
+            </div>
+            }
+
+            <div class="action-bar">
+                @if (isManager()) {
+                <button class="btn btn-edit" (click)="editNeed(need)">Edit Need</button>
+                <button class="btn btn-delete" (click)="deleteNeed(need)">Remove Need</button>
+                }
+
+                @if (isUser()) {
+                <button class="btn btn-pledge" (click)="addPledge(need)">Add Pledge</button>
+                }
+            </div>
+            @if (isUser() || isAdminAccount()) {
+            <p class="small-text">by <span class="creator-link" (click)="filterByCreator(need.creatorName)">
+                    {{ need.creatorName }}</span>
+            </p>
+            }
+        </div>
+        }
+    </li>
+</ul>
+    }
+</div>
+
+@if (isManager()) {
+<div class="admin-actions">
+    <button class="btn btn-create" (click)="createNeed()">Create New Need</button>
+    <button class="btn btn-archive" type="button" (click)="goToArchive()">Open Archive</button>
+</div>
+}

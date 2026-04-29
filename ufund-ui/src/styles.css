@@ -1,0 +1,11 @@
+@import "leaflet/dist/leaflet.css";
+
+body {
+    background-color: #ccc;
+}
+
+.password-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

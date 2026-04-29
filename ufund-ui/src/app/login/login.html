@@ -1,0 +1,24 @@
+<div class="alert alert-danger" *ngIf="app.err && attempt">
+    Invalid credentials, please try again.
+</div>
+<h1>Login</h1>
+<form role="form" (submit)="login()">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username"
+name="username" [(ngModel)]="creds.username"/>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <div class="password-field">
+            <input [type]="passHidden ? 'password' : 'text'" class="form-control" id="password"
+        name="password" [(ngModel)]="creds.password"/>
+            <button (click)="togglePass()" class="btn btn-outline-secondary" type="button" id="toggle-password">
+    <i [ngClass]="{'bi bi-eye-fill': passHidden, 'bi bi-eye-slash-fill': !passHidden}" id="toggle-pass-icon"></i>
+            </button>
+        </div>
+    </div><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form><br>
+<span id="register">Don't have an account?  <a class="active" routerLinkActive="active"
+    routerLink="/register">Sign Up!</a></span>

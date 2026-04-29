@@ -1,0 +1,68 @@
+<h1 class="h1">Register</h1>
+<div class="alert alert-danger" role="alert" *ngIf="usrTaken">
+    Username taken: {{usernameControl.value}}
+</div>
+<form role="form" (submit)="register()">
+    <div class="form-group">
+
+        <label for="username">Username:</label>
+        <input (input)="clearAlert()" type="text" class="form-control" id="username" name="username" [formControl]="usernameControl" />
+        <div *ngIf="usernameControl.invalid && (usernameControl.dirty || usernameControl.touched)">
+            <p *ngIf="usernameControl.errors?.['required']">
+                Username is required.
+            </p>
+            <p *ngIf="usernameControl.errors?.['pattern']">
+                Username must alphanumeric, 5 chars long, and start with a capital letter.
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <div class="password-field">
+        <input [type]="passHidden ? 'password' : 'text'" class="form-control" id="password" name="password" [formControl]="passwordControl" />
+        <button (click)="togglePass()" class="btn btn-outline-secondary" type="button" id="toggle-password">
+    <i [ngClass]="{'bi bi-eye-fill': passHidden, 'bi bi-eye-slash-fill': !passHidden}" id="toggle-pass-icon"></i>
+        </button>
+        </div>
+        <div *ngIf="passwordControl.invalid && (passwordControl.dirty || passwordControl.touched)">
+            <p *ngIf="passwordControl.errors?.['required']">
+                Password is required.
+            </p>
+            <p *ngIf="passwordControl.errors?.['pattern']">
+                Password must be at least 7 chars long and include 1 special character.
+            </p>
+        </div>
+    </div>
+        <div class="form-group">
+            <label for="password-confirm">Confirm Password:</label>
+            <div class="password-field">
+                <input [type]="passConfHidden ? 'password' : 'text'" class="form-control" id="password-confirm" name="password-confirm" [formControl]="passwordConfirmControl" />
+                <button (click)="togglePassConf()" class="btn btn-outline-secondary" type="button" id="toggle-password">
+            <i [ngClass]="{'bi bi-eye-fill': passConfHidden, 'bi bi-eye-slash-fill': !passConfHidden}" id="toggle-conf-icon"></i>
+                </button>
+            </div>
+        <div *ngIf="passwordConfirmControl.invalid && (passwordConfirmControl.dirty || passwordConfirmControl.touched)">
+            <p *ngIf="passwordConfirmControl.value != passwordControl.value">
+                Password does not match.
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="accountType">Account Type:</label>
+        <select class="form-control" id="accountType" [formControl]="accountTypeControl">
+            <option value="User">User</option>
+            <option value="Manager">Food Bank Manager</option>
+        </select>
+    </div>
+
+    <div *ngIf="accountTypeControl.value === 'Manager'" class="form-group mt-3">
+        <label>Pin your Food Bank's location:</label>
+        <div id="map" style="height: 300px; border: 1px solid #ccc;"></div>
+        <p *ngIf="locationControl.invalid && (accountTypeControl.dirty)" class="text-danger">
+            Click on the map to set your location.
+        </p>
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,45 @@
+<div class="archive-page">
+  <div class="archive-header">
+    <h1>Archived Needs</h1>
+    <p class="subtitle">Recently deleted needs. Restore to bring them back to your cupboard, or remove them permanently.</p>
+    <button type="button" class="btn btn-back" (click)="backToCupboard()">&lt; Back to cupboard</button>
+  </div>
+
+  @if (loadError) {
+    <p class="error-msg">Could not load the archive. Try again.</p>
+    <button type="button" class="btn btn-retry" (click)="load()">Retry</button>
+  }
+
+  @if (!loadError && needs.length === 0) {
+    <p class="empty-msg">No archived needs.</p>
+  }
+
+  <ul class="archive-list">
+    @for (need of needs; track need.id) {
+      @if (isAdminAccount() || isLocalManagerUser(need.creatorId)) {
+      <li class="archive-card">
+        <div class="archive-info">
+          <span class="need-name">{{ need.name }} [{{ need.type }}]</span>
+          <span class="deleted-at">Deleted@if(isAdminAccount()) { from {{ need.creatorName }}}: {{ deletedLabel(need) }}</span>
+        </div>
+        <div class="action-bar">
+          <button type="button" class="btn btn-restore" (click)="restore(need)">Restore</button>
+          <button type="button" class="btn btn-delete-forever" (click)="permaDeleteConfirmation(need)">Delete forever</button>
+        </div>
+
+        @if (confirmPermanentDeleteId === need.id) {
+          <div class="confirm-panel" role="dialog" [attr.aria-labelledby]="'confirm-title-' + need.id">
+            <p [attr.id]="'confirm-title-' + need.id" class="confirm-text">
+              Permanently remove <strong>{{ need.name }}</strong>? This cannot be undone.
+            </p>
+            <div class="confirm-actions">
+              <button type="button" class="btn btn-cancel" (click)="cancelPermanentDelete()">Cancel</button>
+              <button type="button" class="btn btn-confirm-delete" (click)="confirmPermanentDelete()">Delete forever</button>
+            </div>
+          </div>
+        }
+      </li>
+      }
+    }
+  </ul>
+</div>

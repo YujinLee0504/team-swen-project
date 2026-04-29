@@ -1,0 +1,424 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1796.7608400719998" height="1121.4265567298178">
+  <desc>title%20Helper%20adds%20a%20need%20to%20funding%20basket%20(Angular%20to%20API)%0Aparticipant%20%22CupboardSearch%5Cn(Component)%22%20as%20Search%0Aparticipant%20%22PledgeEditor%5Cn(Component)%22%20as%20Editor%0Aparticipant%20%22AppService%22%20as%20Svc%0Aparticipant%20%22Angular%22%20as%20Http%0Aparticipant%20%22PledgeBasketController%22%20as%20API%0Aparticipant%20%22PledgeCatalogDAO%5Cn%2B%20pledges%20file%22%20as%20Cat%0Aparticipant%20%22PledgeBasketsDAO%5Cn%2B%20baskets%20file%22%20as%20Bkt%0A%23%201)%20Pick%20a%20need%20from%20cupboard%20search%20UI%0ASearch-%3ESearch%3A%20user%20clicks%20add%20to%20basket%0ASearch-%3ESvc%3A%20setCurrentlyEditingNeed(need)%0ASearch-%3EEditor%3A%20navigateTo(%2Fpledge)%0A%23%202)%20Enter%20pledge%20details%20and%20submit%0AEditor-%3EEditor%3A%20user%20sets%20quantity%20%2F%20money%5CnonSubmit()%0AEditor-%3ESvc%3A%20addPledge(Pledge)%5CnownerId%2C%20needId%2C%20quantity%2C%20money%0Aactivate%20Svc%0ASvc-%3EHttp%3A%20GET%20pledgeBasket%2Fuser%2F%7BownerId%7D%2Fpledge%5Cn%3FneedId%3D%26amount%3D%26money%3D%0Aactivate%20Http%0AHttp-%3EAPI%3A%20HTTP%20GET%20(path%20%2B%20query)%0Aactivate%20API%0AAPI-%3ECat%3A%20addPledgeFromArguments(userId%2C%20needId%2C%20amount%2C%20money)%0ACat--%3EAPI%3A%20Pledge%20(new%20id%2C%20persisted)%0AAPI-%3EBkt%3A%20getPledgeBasketById(userId)%0ABkt--%3EAPI%3A%20PledgeBasket%20or%20null%0AAPI-%3EAPI%3A%20basket.addPledge(pledge)%0AAPI-%3EBkt%3A%20updatePledgeBasket(basket)%0ABkt--%3EAPI%3A%20saved%0AAPI--%3EHttp%3A%20200%20Pledge%5Cn(or%20404%20%2F%20500)%0Adeactivate%20API%0AHttp--%3ESvc%3A%20response%20Observable%20emits%0Adeactivate%20Http%0Adeactivate%20Svc%0AEditor-%3EEditor%3A%20subscribe%20next%3A%5Cnupon%20success%2C%20navigate%20back</desc>
+  <defs />
+  <g>
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g />
+    <g>
+      <rect fill="white" stroke="none" x="0" y="0" width="1796" height="1121" />
+    </g>
+    <g />
+    <g>
+      <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 81.3912972305 111.91099278981817 L 81.3912972305 1121.4265567298178" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667" />
+      <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 272.3391699471667 111.91099278981817 L 272.3391699471667 1121.4265567298178" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667" />
+      <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 535.0673137305 111.91099278981817 L 535.0673137305 1121.4265567298178" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667" />
+      <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 861.9630591638333 111.91099278981817 L 861.9630591638333 1121.4265567298178" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667" />
+      <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1088.8588045971667 111.91099278981817 L 1088.8588045971667 1121.4265567298178" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667" />
+      <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1525.5869483805 111.91099278981817 L 1525.5869483805 1121.4265567298178" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667" />
+      <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1705.8695428414999 111.91099278981817 L 1705.8695428414999 1121.4265567298178" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667" />
+    </g>
+    <g>
+      <path fill="none" stroke="none" />
+      <g>
+        <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 8.167601649999995 51.634092612818186 L 154.614992811 51.634092612818186 L 154.614992811 111.91099278981818 L 8.167601649999995 111.91099278981818 L 8.167601649999995 51.634092612818186 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray="" />
+      </g>
+      <g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="25.8912972305" y="79.24058618981816" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">CupboardSearch</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="38.3912972305" y="95.57578948981816" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">(Component)</text>
+      </g>
+      <path fill="none" stroke="none" />
+      <g>
+        <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 211.61547436666666 51.634092612818186 L 333.06286552766664 51.634092612818186 L 333.06286552766664 111.91099278981818 L 211.61547436666666 111.91099278981818 L 211.61547436666666 51.634092612818186 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray="" />
+      </g>
+      <g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="230.83916994716668" y="79.24058618981816" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">PledgeEditor</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="229.33916994716668" y="95.57578948981816" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">(Component)</text>
+      </g>
+      <path fill="none" stroke="none" />
+      <g>
+        <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 480.34361815 67.9692959128182 L 589.791009311 67.9692959128182 L 589.791009311 111.91099278981818 L 480.34361815 111.91099278981818 L 480.34361815 67.9692959128182 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray="" />
+      </g>
+      <g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="498.0673137305" y="95.57578948981818" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">AppService</text>
+      </g>
+      <path fill="none" stroke="none" />
+      <g>
+        <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 819.7393635833333 67.9692959128182 L 904.1867547443334 67.9692959128182 L 904.1867547443334 111.91099278981818 L 819.7393635833333 111.91099278981818 L 819.7393635833333 67.9692959128182 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray="" />
+      </g>
+      <g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="837.4630591638333" y="95.57578948981818" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">Angular</text>
+      </g>
+      <path fill="none" stroke="none" />
+      <g>
+        <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 994.6351090166667 67.9692959128182 L 1183.0825001776666 67.9692959128182 L 1183.0825001776666 111.91099278981818 L 994.6351090166667 111.91099278981818 L 994.6351090166667 67.9692959128182 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray="" />
+      </g>
+      <g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1012.3588045971667" y="95.57578948981818" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">PledgeBasketController</text>
+      </g>
+      <path fill="none" stroke="none" />
+      <g>
+        <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 1444.3632528 51.634092612818186 L 1606.810643961 51.634092612818186 L 1606.810643961 111.91099278981818 L 1444.3632528 111.91099278981818 L 1444.3632528 51.634092612818186 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray="" />
+      </g>
+      <g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1462.0869483805" y="79.24058618981816" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">PledgeCatalogDAO</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1482.5869483805" y="95.57578948981816" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">+ pledges file</text>
+      </g>
+      <path fill="none" stroke="none" />
+      <g>
+        <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 1623.145847261 51.634092612818186 L 1788.593238422 51.634092612818186 L 1788.593238422 111.91099278981818 L 1623.145847261 111.91099278981818 L 1623.145847261 51.634092612818186 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray="" />
+      </g>
+      <g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1640.8695428414999" y="79.24058618981816" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">PledgeBasketsDAO</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1662.8695428414999" y="95.57578948981816" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">+ baskets file</text>
+      </g>
+    </g>
+    <g>
+      <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 526.8997120805 423.91337581981816 L 543.2349153805001 423.91337581981816 L 543.2349153805001 980.9438083498178 L 526.8997120805 980.9438083498178 Z" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="" />
+      <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 853.7954575138333 485.98714835981815 L 870.1306608138334 485.98714835981815 L 870.1306608138334 980.9438083498178 L 853.7954575138333 980.9438083498178 Z" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+      <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 1080.6912029471666 531.7257175998182 L 1097.0264062471667 531.7257175998182 L 1097.0264062471667 935.2052391098179 L 1080.6912029471666 935.2052391098179 Z" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+      <g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="16pt" font-style="normal" font-weight="normal" text-decoration="normal" x="649.5" y="24.651306798181814" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">Helper adds a need to funding basket (Angular to API)</text>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="100.72128780216666" y="144.58139938981816" width="165.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="103.17156829716666" y="159.28308235981814" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">user clicks add to basket</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 81.3912972305 165.81716367981815 L 146.7321104305 165.81716367981815 L 146.7321104305 187.05292796981814 L 94.84061461416667 187.05292796981814" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(81.3912972305,187.05292796981814) translate(-81.3912972305,-187.05292796981814)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 95.00396664716666 180.2465932614848 L 81.3912972305 187.05292796981814 L 95.00396664716666 193.85926267815148 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="206.2790249855" y="211.55573291981815" width="203.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="208.7293054805" y="226.25741588981813" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">setCurrentlyEditingNeed(need)</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 81.3912972305 232.79149720981815 L 521.6179963468334 232.79149720981815" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(535.0673137305,232.79149720981815) translate(-535.0673137305,-232.79149720981815)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 521.4546443138333 225.9851625014848 L 535.0673137305 232.79149720981815 L 521.4546443138333 239.59783191815148 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="111.41495309383335" y="257.29430215981813" width="130.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="113.86523358883335" y="271.9959851298181" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">navigateTo(/pledge)</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 81.3912972305 278.53006644981815 L 258.8898525635 278.53006644981815" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(272.3391699471667,278.53006644981815) translate(-272.3391699471667,-278.53006644981815)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 258.7265005305 271.7237317414848 L 272.3391699471667 278.53006644981815 L 258.7265005305 285.3364011581515 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="291.66916051883334" y="303.0328713998182" width="175.90056099" height="21.23576429" />
+        <rect fill="white" stroke="none" x="291.66916051883334" y="319.3680746998182" width="76.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="294.11944101383335" y="317.73455436981817" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">user sets quantity / money</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="294.11944101383335" y="334.06975766981816" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">onSubmit()</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 272.3391699471667 340.60383898981814 L 337.6799831471667 340.60383898981814 L 337.6799831471667 361.83960327981816 L 285.78848733083333 361.83960327981816" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(272.3391699471667,361.83960327981816) translate(-272.3391699471667,-361.83960327981816)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 285.95183936383336 355.0332685714848 L 272.3391699471667 361.83960327981816 L 285.95183936383336 368.6459379881515 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="291.66916051883334" y="386.34240822981815" width="128.90056099" height="21.23576429" />
+        <rect fill="white" stroke="none" x="291.66916051883334" y="402.67761152981814" width="215.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="294.11944101383335" y="401.0440911998181" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">addPledge(Pledge)</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="294.11944101383335" y="417.3792944998181" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">ownerId, needId, quantity, money</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 272.3391699471667 423.91337581981816 L 513.4503946968333 423.91337581981816" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(526.8997120805,423.91337581981816) translate(-526.8997120805,-423.91337581981816)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 513.2870426638333 417.1070411114848 L 526.8997120805 423.91337581981816 L 513.2870426638333 430.7197105281515 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="562.5649059521667" y="448.41618076981814" width="271.90056099" height="21.23576429" />
+        <rect fill="white" stroke="none" x="562.5649059521667" y="464.75138406981813" width="195.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="565.0151864471667" y="463.1178637398181" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">GET pledgeBasket/user/{ownerId}/pledge</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="565.0151864471667" y="479.4530670398181" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">?needId=&amp;amount=&amp;money=</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 543.2349153805001 485.98714835981815 L 840.3461401301666 485.98714835981815" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(853.7954575138333,485.98714835981815) translate(-853.7954575138333,-485.98714835981815)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 840.1827880971666 479.1808136514848 L 853.7954575138333 485.98714835981815 L 840.1827880971666 492.7934830681515 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="889.4606513855" y="510.48995330981813" width="171.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="891.9109318805" y="525.1916362798181" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">HTTP GET (path + query)</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 870.1306608138334 531.7257175998182 L 1067.2418855634999 531.7257175998182" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(1080.6912029471666,531.7257175998182) translate(-1080.6912029471666,-531.7257175998182)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 1067.0785335305 524.9193828914848 L 1080.6912029471666 531.7257175998182 L 1067.0785335305 538.5320523081515 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="1116.3563968188334" y="556.2285225498181" width="389.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1118.8066773138335" y="570.9302055198181" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">addPledgeFromArguments(userId, needId, amount, money)</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1097.0264062471667 577.4642868398181 L 1512.1376309968332 577.4642868398181" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(1525.5869483805,577.4642868398181) translate(-1525.5869483805,-577.4642868398181)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 1511.9742789638333 570.6579521314848 L 1525.5869483805 577.4642868398181 L 1511.9742789638333 584.2706215481514 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="1224.3563968188334" y="601.967091789818" width="173.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1226.8066773138335" y="616.668774759818" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">Pledge (new id, persisted)</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1525.5869483805 623.202856079818 L 1110.4757236308335 623.202856079818" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132" />
+        <g transform="translate(1097.0264062471667,623.202856079818) translate(-1097.0264062471667,-623.202856079818)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 1110.6390756638334 616.3965213714847 L 1097.0264062471667 623.202856079818 L 1110.6390756638334 630.0091907881514 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="1304.9976940493332" y="647.705661029818" width="192.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1307.4479745443332" y="662.407343999818" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">getPledgeBasketById(userId)</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1097.0264062471667 668.941425319818 L 1692.420225457833 668.941425319818" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(1705.8695428414999,668.941425319818) translate(-1705.8695428414999,-668.941425319818)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 1692.2568734248332 662.1350906114847 L 1705.8695428414999 668.941425319818 L 1692.2568734248332 675.7477600281513 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="1332.4976940493332" y="693.4442302698179" width="137.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1334.9479745443332" y="708.1459132398179" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">PledgeBasket or null</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1705.8695428414999 714.6799945598179 L 1110.4757236308335 714.6799945598179" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132" />
+        <g transform="translate(1097.0264062471667,714.6799945598179) translate(-1097.0264062471667,-714.6799945598179)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 1110.6390756638334 707.8736598514846 L 1097.0264062471667 714.6799945598179 L 1110.6390756638334 721.4863292681513 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="1116.3563968188334" y="739.1827995098179" width="173.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1118.8066773138335" y="753.8844824798178" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">basket.addPledge(pledge)</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1097.0264062471667 760.4185637998179 L 1162.3672194471667 760.4185637998179 L 1162.3672194471667 781.6543280898179 L 1110.4757236308335 781.6543280898179" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(1097.0264062471667,781.6543280898179) translate(-1097.0264062471667,-781.6543280898179)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 1110.6390756638334 774.8479933814846 L 1097.0264062471667 781.6543280898179 L 1110.6390756638334 788.4606627981512 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="1305.4976940493332" y="806.1571330398178" width="191.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1307.9479745443332" y="820.8588160098178" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">updatePledgeBasket(basket)</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1097.0264062471667 827.3928973298179 L 1692.420225457833 827.3928973298179" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(1705.8695428414999,827.3928973298179) translate(-1705.8695428414999,-827.3928973298179)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 1692.2568734248332 820.5865626214845 L 1705.8695428414999 827.3928973298179 L 1692.2568734248332 834.1992320381512 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="1379.4976940493332" y="851.8957022798178" width="43.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1381.9479745443332" y="866.5973852498178" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">saved</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1705.8695428414999 873.1314665698178 L 1110.4757236308335 873.1314665698178" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132" />
+        <g transform="translate(1097.0264062471667,873.1314665698178) translate(-1097.0264062471667,-873.1314665698178)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 1110.6390756638334 866.3251318614845 L 1097.0264062471667 873.1314665698178 L 1110.6390756638334 879.9378012781511 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="929.4606513855" y="897.6342715198178" width="77.90056099" height="21.23576429" />
+        <rect fill="white" stroke="none" x="929.4606513855" y="913.9694748198178" width="91.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="931.9109318805" y="912.3359544898178" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">200 Pledge</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="931.9109318805" y="928.6711577898178" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">(or 404 / 500)</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1080.6912029471666 935.2052391098179 L 883.5799781975 935.2052391098179" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132" />
+        <g transform="translate(870.1306608138334,935.2052391098179) translate(-870.1306608138334,-935.2052391098179)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 883.7433302305001 928.3989044014845 L 870.1306608138334 935.2052391098179 L 883.7433302305001 942.0115738181512 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="606.0649059521667" y="959.7080440598178" width="184.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="608.5151864471667" y="974.4097270298178" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">response Observable emits</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 853.7954575138333 980.9438083498178 L 556.6842327641667 980.9438083498178" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132" />
+        <g transform="translate(543.2349153805001,980.9438083498178) translate(-543.2349153805001,-980.9438083498178)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 556.8475847971667 974.1374736414845 L 543.2349153805001 980.9438083498178 L 556.8475847971667 987.7501430581511 Z" />
+        </g>
+      </g>
+      <g>
+        <rect fill="white" stroke="none" x="291.66916051883334" y="1005.4466132998178" width="103.90056099" height="21.23576429" />
+        <rect fill="white" stroke="none" x="291.66916051883334" y="1021.781816599818" width="193.90056099" height="21.23576429" />
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="294.11944101383335" y="1020.1482962698178" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">subscribe next:</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="294.11944101383335" y="1036.483499569818" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">upon success, navigate back</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 272.3391699471667 1043.017580889818 L 337.6799831471667 1043.017580889818 L 337.6799831471667 1064.2533451798179 L 285.78848733083333 1064.2533451798179" stroke-miterlimit="10" stroke-width="1.3612669416666667" />
+        <g transform="translate(272.3391699471667,1064.2533451798179) translate(-272.3391699471667,-1064.2533451798179)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 285.95183936383336 1057.4470104714846 L 272.3391699471667 1064.2533451798179 L 285.95183936383336 1071.059679888151 Z" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

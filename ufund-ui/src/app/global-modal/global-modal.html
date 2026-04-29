@@ -1,0 +1,18 @@
+@if (confirm$ | async; as confirm) {
+<div class="modal-overlay" (click)="cancelConfirm()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <p class="modal-message">{{ confirm.message }}</p>
+        <div class="modal-actions">
+            <button class="btn-modal-cancel" (click)="cancelConfirm()">{{ confirm.cancelText }}</button>
+            <button class="btn-modal-close" (click)="acceptConfirm()">{{ confirm.confirmText }}</button>
+        </div>
+    </div>
+</div>
+} @else if (message$ | async; as msg) {
+<div class="modal-overlay" (click)="close()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <p class="modal-message">{{ msg }}</p>
+        <button class="btn-modal-close" (click)="close()">OK</button>
+    </div>
+</div>
+}

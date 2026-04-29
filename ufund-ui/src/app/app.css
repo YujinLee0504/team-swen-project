@@ -1,0 +1,115 @@
+
+
+.app {
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
+    padding:0;
+}
+
+.toolbar {
+    padding:0;
+}
+
+.main-body {
+    flex: 1;
+    padding: 30px;
+}
+
+.navbar {
+    background-color: #d9ead3;
+    border-bottom: 2px solid #bacbb3;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    width: auto;
+}
+
+.nav-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #2196F3;
+    background-color: #f0f7ff;
+}
+
+.nav-link.active {
+    color: #2196F3;
+    background-color: #e3f2fd;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.navbar-nav .nav-item:has(a[routerLink="/login"]) {
+    margin-left: auto;
+}
+
+.navbar-nav .nav-item:has(a:not([hidden])) {
+    display: flex;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+router-outlet+* {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar-brand img {
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

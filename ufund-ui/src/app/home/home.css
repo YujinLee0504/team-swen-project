@@ -1,0 +1,29 @@
+h1 {
+    
+    font-size:1.8rem;
+}
+p {
+
+    font-size:1.2rem;
+}
+
+.ai-text {
+    font-weight: bold;
+    background: linear-gradient(135deg, #E06666, #F6B26B, #93C47D);
+    background-size: 200% auto;
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    
+    animation: ylc_text 3s linear infinite;
+    display: inline-block;
+}
+
+@keyframes ylc_text {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
